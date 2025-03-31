@@ -12,6 +12,7 @@
             padding: 0;
         }
         .container {
+            display: flex;
             width: 100vw;
             height: 100vh;
             flex-direction: column;
@@ -23,14 +24,29 @@
             height: 100vh;
             border: none;
         }
-        h1 {
-            margin: 0px;
+        .fallback {
+            display: none;
+            font-size: 18px;
+        }
+        @media (max-width: 768px) {
+            iframe {
+                display: none;
+            }
+            .fallback {
+                display: block;
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <iframe src="EbookVie_Buc%20tranh%20ky%20quai.pdf"></iframe>
+        <div class="fallback">
+            <p>Trình duyệt của bạn không hỗ trợ xem PDF. <br> 
+                <a href="EbookVie_Buc%20tranh%20ky%20quai.pdf" download>Nhấn vào đây để tải xuống</a>
+            </p>
+        </div>
     </div>
 </body>
 </html>
